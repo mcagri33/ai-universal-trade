@@ -345,7 +345,7 @@ class AIDecisionEngine {
    */
   generateReasoning(decision, analysis, currentPrice) {
     const { action, confidence, signals, indicators } = decision;
-    const symbol = decision.symbol || 'UNKNOWN';
+    const symbol = decision.symbol || 'BTC/USDT';
     
     let reasoning = `🤖 AI suggests **${action.toUpperCase()} ${symbol}**`;
     

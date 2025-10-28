@@ -4,7 +4,7 @@
  */
 
 const db = require('../database/models');
-const logger = require('./logger');
+const logger = require('../utils/logger');
 
 class ConfigManager {
   constructor() {

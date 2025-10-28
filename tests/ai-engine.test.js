@@ -144,6 +144,12 @@ describe('AI Decision Engine', () => {
 
   describe('Error Handling', () => {
     test('should handle invalid strategy gracefully', async () => {
+      // Add sufficient price history first
+      const prices = Array.from({ length: 60 }, (_, i) => 50000 + i);
+      prices.forEach((price, index) => {
+        aiEngine.addPriceData('BTC/USDT', price, Date.now() + index);
+      });
+      
       const mockTicker = { last: 50000 };
       const decision = await aiEngine.analyze('BTC/USDT', 'invalid_strategy', mockTicker);
       
@@ -153,6 +159,12 @@ describe('AI Decision Engine', () => {
     });
 
     test('should handle analysis errors gracefully', async () => {
+      // Add sufficient price history first
+      const prices = Array.from({ length: 60 }, (_, i) => 50000 + i);
+      prices.forEach((price, index) => {
+        aiEngine.addPriceData('BTC/USDT', price, Date.now() + index);
+      });
+      
       // Mock an error in the analysis
       const originalAnalyze = aiEngine.strategies.ema_rsi;
       aiEngine.strategies.ema_rsi = () => {

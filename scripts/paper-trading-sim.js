@@ -62,7 +62,7 @@ class PaperTradingSimulator {
       // Get AI analysis
       const analysis = await aiEngine.analyze(symbol, strategy, ticker);
 
-      if (analysis.action === 'hold' || analysis.confidence < 60) {
+      if (analysis.action === 'hold' || analysis.confidence < 50) {
         return { action: 'hold', profit: 0 };
       }
 
