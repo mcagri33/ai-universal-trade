@@ -5,9 +5,9 @@
 
 require('dotenv').config();
 
-const db = require('./src/database/connection');
-const dbModels = require('./src/database/models');
-const logger = require('./src/utils/logger');
+const db = require('../src/database/connection');
+const dbModels = require('../src/database/models');
+const logger = require('../src/utils/logger');
 
 async function initializeDatabase() {
   try {

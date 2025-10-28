@@ -17,18 +17,14 @@ A professional, modular, and testable trading bot system designed for cryptocurr
 
 ## 📦 Installation
 
-1. **Clone the repository**
+1. **Clone and install**
    ```bash
    git clone <repository-url>
    cd universal-ai-trader
-   ```
-
-2. **Install dependencies**
-   ```bash
    npm install
    ```
 
-3. **Setup MySQL Database**
+2. **Setup MySQL Database**
    ```sql
    CREATE DATABASE universal_ai_trader;
    CREATE USER 'trader'@'localhost' IDENTIFIED BY 'strongpassword';
@@ -36,16 +32,23 @@ A professional, modular, and testable trading bot system designed for cryptocurr
    FLUSH PRIVILEGES;
    ```
 
-4. **Configure Environment**
+3. **Configure Environment**
    ```bash
    cp .env.example .env
    # Edit .env with your credentials
    ```
 
-5. **Initialize Database Schema**
+4. **Initialize Database**
    ```bash
    npm run db:init
    ```
+
+5. **Start with PM2**
+   ```bash
+   pm2 start ecosystem.config.js
+   ```
+
+**📖 For detailed installation instructions, see [INSTALLATION.md](INSTALLATION.md)**
 
 ## 🧪 Demo Simulation
 
@@ -61,9 +64,32 @@ npm run test:paper
 🤖 AI: RSI neutral, EMA crossing up, Confidence: 70%
 ```
 
-## ⚙️ Setup
+**Extended Demo Output:**
+```
+📊 Paper Trading Simulation Results
+=====================================
+Strategy: ema_rsi
+Total Trades: 30
+Wins: 8
+Losses: 22
+Win Rate: 26.7%
+Total PnL: -12.07%
+Average Profit: -0.40%
+Errors: 0
+Average Confidence: 54.7%
+Max Drawdown: 16.29%
 
-### Environment Variables (.env)
+📈 Recent Trades:
+26. BUY - -0.62% (50% confidence)
+27. BUY - -0.86% (50% confidence)
+28. BUY - -1.84% (50% confidence)
+29. SELL - +0.36% (50% confidence)
+30. SELL - -0.67% (50% confidence)
+```
+
+## ⚙️ Quick Start
+
+**Environment Variables (.env):**
 ```env
 # Exchange API Credentials
 EXCHANGE_API_KEY=your_api_key
@@ -79,22 +105,17 @@ DB_USER=trader
 DB_PASS=strongpassword
 DB_NAME=universal_ai_trader
 
-# Trading Configuration
-DEFAULT_EXCHANGE=binance
-DEFAULT_SYMBOL=BTC/USDT
-DEFAULT_TRADE_AMOUNT=20
-MAX_DAILY_LOSS=100
+# System Configuration
+NODE_ENV=production
+LOG_LEVEL=info
+PAPER_MODE=false
 ```
 
-### Telegram Bot Setup
-1. Create a bot via [@BotFather](https://t.me/botfather)
-2. Get your bot token and add it to `.env`
-3. Get your Telegram user ID and add it to `TG_ADMIN_ID`
+**Note:** All trading settings (exchange, symbol, amounts, limits) are managed dynamically via MySQL database and Telegram `/set` commands. No need to restart the bot for configuration changes.
 
-### Exchange API Setup
-1. **Binance**: Create API key with trading permissions
-2. **Kraken**: Generate API key with trade permissions
-3. **Bybit**: Create API key with derivatives trading access
+**🔒 Security:** API keys and secrets are never logged. Winston logger automatically filters sensitive data.
+
+**📖 For detailed setup instructions, see [INSTALLATION.md](INSTALLATION.md)**
 
 ## 🎮 Telegram Commands
 
