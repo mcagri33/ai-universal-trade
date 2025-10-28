@@ -47,6 +47,20 @@ A professional, modular, and testable trading bot system designed for cryptocurr
    npm run db:init
    ```
 
+## 🧪 Demo Simulation
+
+You can safely test the bot in paper mode:
+
+```bash
+npm run test:paper
+```
+
+**Example output:**
+```
+📊 30 Trades | WinRate: 26.7% | PnL: -12.07% | MaxDrawdown: 16.29%
+🤖 AI: RSI neutral, EMA crossing up, Confidence: 70%
+```
+
 ## ⚙️ Setup
 
 ### Environment Variables (.env)

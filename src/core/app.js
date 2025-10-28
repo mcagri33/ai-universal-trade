@@ -7,7 +7,8 @@ require('dotenv').config();
 
 const db = require('../database/connection');
 const dbModels = require('../database/models');
-const telegramBot = require('../telegram/bot');
+const telegramBot = process.env.TG_BOT_TOKEN === 'mock_token' ? 
+  require('../telegram/mock-bot') : require('../telegram/bot');
 const telegramCommands = require('../telegram/commands');
 const tradingCore = require('./trader');
 const scheduler = require('./scheduler');

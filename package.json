@@ -14,7 +14,7 @@
     "pm2:restart": "pm2 restart ecosystem.config.js",
     "pm2:logs": "pm2 logs universal-ai-trader",
     "db:init": "node scripts/init-db.js",
-    "simulate": "node scripts/paper-trading-sim.js",
+    "test:paper": "node scripts/paper-trading-sim.js",
     "lint": "eslint src/ tests/",
     "lint:fix": "eslint src/ tests/ --fix"
   },
