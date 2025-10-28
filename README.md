@@ -128,6 +128,47 @@ Run with coverage:
 npm run test:coverage
 ```
 
+### Paper Trading Simulation
+Test the AI strategies with simulated trading:
+```bash
+npm run simulate
+```
+
+**Example Output:**
+```
+📊 Paper Trading Simulation Results
+=====================================
+Strategy: ema_rsi
+Total Trades: 10
+Wins: 7
+Losses: 3
+Win Rate: 70.0%
+Total PnL: +12.5%
+Average Profit: +1.25%
+Errors: 0
+
+📈 Recent Trades:
+6. BUY - +2.1% (85% confidence)
+7. SELL - -1.2% (72% confidence)
+8. BUY - +3.4% (91% confidence)
+9. BUY - +1.8% (78% confidence)
+10. SELL - +2.3% (83% confidence)
+```
+
+### Database Initialization
+Initialize the database schema:
+```bash
+npm run db:init
+```
+
+**Example Output:**
+```
+[INFO] Initializing database...
+[INFO] Database connection established successfully
+[INFO] Database schema initialized successfully
+[INFO] Database initialization completed successfully
+```
+
 ## 📊 Database Schema
 
 ### Users Table
