@@ -1,0 +1,52 @@
+{
+  "name": "universal-ai-trader",
+  "version": "1.0.0",
+  "description": "Professional AI-powered trading bot supporting multiple exchanges with Telegram management",
+  "main": "src/core/trader.js",
+  "scripts": {
+    "start": "node src/core/app.js",
+    "dev": "nodemon src/core/app.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:logs": "pm2 logs universal-ai-trader",
+    "db:init": "node scripts/init-db.js",
+    "simulate": "node scripts/paper-trading-sim.js",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix"
+  },
+  "keywords": [
+    "trading",
+    "bot",
+    "cryptocurrency",
+    "ai",
+    "telegram",
+    "binance",
+    "kraken",
+    "bybit"
+  ],
+  "author": "AI Universal Trade",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.15.6",
+    "axios": "^1.6.2",
+    "mysql2": "^3.6.5",
+    "dotenv": "^16.3.1",
+    "pm2": "^5.3.0",
+    "winston": "^3.11.0",
+    "node-schedule": "^2.1.1",
+    "ccxt": "^4.1.25"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3",
+    "eslint": "^8.55.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
